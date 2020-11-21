@@ -64,6 +64,7 @@ function App() {
     players.map(item => {
       axios.get(`https://eu.api.blizzard.com/profile/wow/character/${item.realm}/${item.name}/appearance?namespace=profile-eu&locale=fr_FR&access_token=USDBe25Z43D4TLy0hfNGnB9oDJ7jXjHM1y`)
         .then(res => {
+          console.log(res);
           axios.get(`https://eu.api.blizzard.com/profile/wow/character/${item.realm}/${item.name}/character-media?namespace=profile-eu&locale=fr_FR&access_token=USDBe25Z43D4TLy0hfNGnB9oDJ7jXjHM1y`)
             .then(media => {
               setDatas(old => [...old, {

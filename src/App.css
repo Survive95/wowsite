@@ -198,31 +198,45 @@
 /*ICYVEINS*/
 
 .icy_list{
-  display: flex;
-  flex-wrap: wrap;
   list-style: none;
 }
 
 .icy_list li{
-  margin: 0 10px 10px 0;
   transition: 0.2s;
   cursor: pointer;
   display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.icy_list li span{
+  display: flex;
+  margin-left: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  min-width: 50px;
+  width: 50px;
+}
+
+.icy_list li span img{
+  min-width: 50px;
+  width: 50px;
 }
 
 .icy_list li a{
-  color: black;
+  color: white;
   font-size: 20px;
   font-weight: 500;
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: none;
   height: 100%;
   width: 100%;
-  padding: 20px 40px;
+  padding: 30px 20px;
 }
 
 .icy_list li:hover{
-  filter: brightness(0.8);
+  margin-left: 20px;
 }
 
 /*ICYVEINS*/
