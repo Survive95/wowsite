@@ -124,7 +124,7 @@
 .player_list{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 15px;
   list-style: none;
 }
 
@@ -142,6 +142,7 @@
 
 .player_list a{
   text-decoration: none;
+  position: relative;
 }
 
 .player_list a:hover li{
@@ -172,6 +173,11 @@
   margin-bottom: 0px;
 }
 
+.player_level{
+  color: white;
+  font-size: 20px;
+  border-radius: 100px;
+}
 /*HOME*/
 
 

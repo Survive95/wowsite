@@ -21,6 +21,7 @@ function Home(props) {
                                                 <p>{item.gender}</p>
                                                 <p>{item.race}</p>
                                             </div>
+                                            <p className="player_level">{item.level}</p>
                                         </div>
                                         <div className="player_details">
                                             <p>{item.class}</p>
@@ -50,6 +51,7 @@ function Home(props) {
                                                 <p>{item.gender}</p>
                                                 <p>{item.race}</p>
                                             </div>
+                                            <p className="player_level">{item.level}</p>
                                         </div>
                                         <div className="player_details">
                                             <p>{item.class}</p>

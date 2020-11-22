@@ -62,20 +62,21 @@ function App() {
 
   useEffect(() => {
     players.map(item => {
-      axios.get(`https://eu.api.blizzard.com/profile/wow/character/${item.realm}/${item.name}/appearance?namespace=profile-eu&locale=fr_FR&access_token=USDBe25Z43D4TLy0hfNGnB9oDJ7jXjHM1y`)
+      axios.get(`https://eu.api.blizzard.com/profile/wow/character/${item.realm}/${item.name}?namespace=profile-eu&locale=fr_FR&access_token=USDBe25Z43D4TLy0hfNGnB9oDJ7jXjHM1y`)
         .then(res => {
           console.log(res);
           axios.get(`https://eu.api.blizzard.com/profile/wow/character/${item.realm}/${item.name}/character-media?namespace=profile-eu&locale=fr_FR&access_token=USDBe25Z43D4TLy0hfNGnB9oDJ7jXjHM1y`)
             .then(media => {
               setDatas(old => [...old, {
-                id: res.data.character.id,
-                name: res.data.character.name,
-                realm: res.data.character.realm.name,
+                id: res.data.id,
+                name: res.data.name,
+                realm: res.data.realm.name,
+                level : res.data.level, 
                 realmslug: item.realm,
                 faction: res.data.faction.name,
                 gender: res.data.gender.name,
-                class: res.data.playable_class.name,
-                race: res.data.playable_race.name,
+                class: res.data.character_class.name,
+                race: res.data.race.name,
                 avatar: media.data.assets[0].value,
                 inset: media.data.assets[1].value,
                 main: media.data.assets[2].value,
