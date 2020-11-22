@@ -59,6 +59,7 @@ function App() {
   ]
 
   const [datas, setDatas] = useState([])
+  const [menu, setMenu] = useState(false)
 
   useEffect(() => {
     players.map(item => {
@@ -99,11 +100,12 @@ function App() {
         <header className="header_app">
           <div className="header_container">
             <h1 className="header_title">Wow Project</h1>
-            <nav className="header_nav">
-              <NavLink exact to="/">Accueil</NavLink>
-              <NavLink exact to="/elvui">Elvui</NavLink>
-              <NavLink exact to="/icy">Icy Veins</NavLink>
+            <nav className={menu ? 'header_nav active' : 'header_nav'}>
+              <NavLink onClick={() => {setMenu(false)}} exact to="/">Accueil</NavLink>
+              <NavLink onClick={() => {setMenu(false)}} exact to="/elvui">Elvui</NavLink>
+              <NavLink onClick={() => {setMenu(false)}} exact to="/icy">Icy Veins</NavLink>
             </nav>
+            <div onClick={() => {setMenu(true)}} className="header_menu_button"><i class="fas fa-bars"></i></div>
           </div>
         </header>
         <main className="main_app">
