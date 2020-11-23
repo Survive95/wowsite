@@ -121,7 +121,7 @@ function App() {
               <NavLink onClick={() => {setMenu(false)}} exact to="/">Accueil</NavLink>
               <NavLink onClick={() => {setMenu(false)}} exact to="/elvui">Elvui</NavLink>
               <NavLink onClick={() => {setMenu(false)}} exact to="/icy">Icy Veins</NavLink>
-              {/* <NavLink onClick={() => {setMenu(false)}} exact to="/raider">Raider Io</NavLink> */}
+              <NavLink onClick={() => {setMenu(false)}} exact to="/raider">Raider Io</NavLink>
             </nav>
             <div onClick={() => {setMenu(true)}} className="header_menu_button"><i className="fas fa-bars"></i></div>
           </div>
@@ -132,7 +132,7 @@ function App() {
           </Route>
           <Route exact path="/elvui" component={Elvui}></Route>
           <Route exact path="/icy" component={Icy}></Route>
-          {/* <Route exact path="/raider" component={Raider}></Route> */}
+          <Route exact path="/raider" component={Raider}></Route>
         </main>
       </Router>
     </div>

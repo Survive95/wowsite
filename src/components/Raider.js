@@ -8,6 +8,12 @@ function Raider() {
     let selectRegion = createRef()
 
     const [result, setResult] = useState([])
+    const [show, setShow] = useState(false)
+
+    const back = function(){
+        setShow(false)
+        setResult([])
+    }
 
     const sendForm = function (e) {
         e.preventDefault();
@@ -20,6 +26,9 @@ function Raider() {
                 console.log(res);
                 setResult(res.data)
             })
+            .then(() => {
+                setShow(true)
+            })
             .catch(() => {
                 setResult([])
             })
@@ -28,7 +37,7 @@ function Raider() {
 
     return (
         <div className="raider_container">
-            <form onSubmit={(e) => sendForm(e)} className="raider_form">
+            {!show ? <form onSubmit={(e) => sendForm(e)} className="raider_form">
                 <h3 className="form_title">Rechercher un personnage Raider.io</h3>
                 <label>Sélectionner la région</label>
                 <select ref={selectRegion} required>
@@ -42,26 +51,25 @@ function Raider() {
                 <label>Nom du serveur :</label>
                 <input ref={inputServer} name="server" required type="text"></input>
                 <button>Rechercher</button>
-            </form>
-            {result.length > 0 ? <ul className="raider_search">
-                {result.map((item, index) => {
+            </form> : <button onClick={() => back()} className="back_button"><i className="fas fa-long-arrow-alt-left"></i>Retour</button>}
+            {show ? <ul className="raider_search">
+                {result.length > 0 ? result.map((item, index) => {
                     return (
                         <li key={index}>
-                            <a href={item.profile_url}>
+                            <a target="_blank" href={item.profile_url}>
                                 <img src={item.thumbnail_url}></img>
                                 <p>{item.name}</p>
                             </a>
                         </li>
                     )
-                })}
-            </ul> : <ul className="raider_search">
+                }) :
                     <li>
-                        <a href={result.profile_url}>
+                        <a target="_blank" href={result.profile_url}>
                             <img src={result.thumbnail_url}></img>
                             <p>{result.name}</p>
                         </a>
-                    </li></ul>}
-
+                    </li>}
+            </ul> : ''}
         </div>
     )
 }
