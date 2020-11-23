@@ -82,7 +82,6 @@ function App() {
     players.map(item => {
       axios.get(`https://eu.api.blizzard.com/profile/wow/character/${item.realm}/${item.name}?namespace=profile-eu&locale=fr_FR&access_token=USDBe25Z43D4TLy0hfNGnB9oDJ7jXjHM1y`)
         .then(res => {
-          console.log(res);
           axios.get(`https://eu.api.blizzard.com/profile/wow/character/${item.realm}/${item.name}/character-media?namespace=profile-eu&locale=fr_FR&access_token=USDBe25Z43D4TLy0hfNGnB9oDJ7jXjHM1y`)
             .then(media => {
               setDatas(old => [...old, {
@@ -122,7 +121,7 @@ function App() {
               <NavLink onClick={() => {setMenu(false)}} exact to="/elvui">Elvui</NavLink>
               <NavLink onClick={() => {setMenu(false)}} exact to="/icy">Icy Veins</NavLink>
             </nav>
-            <div onClick={() => {setMenu(true)}} className="header_menu_button"><i class="fas fa-bars"></i></div>
+            <div onClick={() => {setMenu(true)}} className="header_menu_button"><i className="fas fa-bars"></i></div>
           </div>
         </header>
         <main className="main_app">
