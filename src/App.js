@@ -57,10 +57,10 @@ function App() {
       link: "https://worldofwarcraft.com/fr-fr/character/eu/elune/s%C3%A4nk"
     },
     {
-      name: "naxramás",
+      name: "nyvram",
       realm: "elune",
       player: "3",
-      link: "https://worldofwarcraft.com/fr-fr/character/eu/elune/naxram%C3%A1s"
+      link: "https://worldofwarcraft.com/fr-fr/character/eu/elune/nyvram"
     },
     {
       name: "eidor",
