@@ -294,3 +294,77 @@
 }
 
 /*ICYVEINS*/
+
+/*RAIDER*/
+
+.raider_form{
+  display: flex;
+  flex-direction: column;
+}
+
+.raider_form:valid button{
+  display: block;
+}
+
+.form_title{
+  color: #2C91E1;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.raider_form input, .raider_form select{
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: var(--background-color);
+  box-shadow: 0 0 5px #2C91E1;
+  border-radius: 5px;
+  padding: 0 10px;
+  color: white;
+  margin-bottom: 15px;
+  appearance: none;
+}
+
+.raider_form select option{
+  font-size: 20px;
+}
+
+.raider_form label{
+  color: #2C91E1;
+  margin-bottom: 10px;
+}
+
+.raider_form button{
+  padding: 10px 0;
+  background-color: #2C91E1;
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+.raider_search{
+  list-style: none;
+  margin-top: 40px;
+}
+
+.raider_search li{
+  box-shadow: 0 0 5px #2C91E1;
+}
+
+.raider_search li a{
+  display: flex;
+  align-items: center;
+  color: #2C91E1;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.raider_search li a img{
+  width: 40px;
+  margin-right: 20px;
+}
+
+/*RAIDER*/

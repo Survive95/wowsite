@@ -9,6 +9,7 @@ import Elvui from './components/Elvui';
 import Icy from './components/Icy';
 import axios from 'axios'
 import { useEffect, useState } from 'react';
+import Raider from './components/Raider';
 
 function App() {
 
@@ -80,9 +81,9 @@ function App() {
 
   useEffect(() => {
     players.map(item => {
-      axios.get(`https://eu.api.blizzard.com/profile/wow/character/${item.realm}/${item.name}?namespace=profile-eu&locale=fr_FR&access_token=USDBe25Z43D4TLy0hfNGnB9oDJ7jXjHM1y`)
+      axios.get(`https://eu.api.blizzard.com/profile/wow/character/${item.realm}/${item.name}?namespace=profile-eu&locale=fr_FR&access_token=USdn0uAodasBQdOSpDsC5q7M3fCT94vdIa`)
         .then(res => {
-          axios.get(`https://eu.api.blizzard.com/profile/wow/character/${item.realm}/${item.name}/character-media?namespace=profile-eu&locale=fr_FR&access_token=USDBe25Z43D4TLy0hfNGnB9oDJ7jXjHM1y`)
+          axios.get(`https://eu.api.blizzard.com/profile/wow/character/${item.realm}/${item.name}/character-media?namespace=profile-eu&locale=fr_FR&access_token=USdn0uAodasBQdOSpDsC5q7M3fCT94vdIa`)
             .then(media => {
               setDatas(old => [...old, {
                 id: res.data.id,
@@ -120,6 +121,7 @@ function App() {
               <NavLink onClick={() => {setMenu(false)}} exact to="/">Accueil</NavLink>
               <NavLink onClick={() => {setMenu(false)}} exact to="/elvui">Elvui</NavLink>
               <NavLink onClick={() => {setMenu(false)}} exact to="/icy">Icy Veins</NavLink>
+              {/* <NavLink onClick={() => {setMenu(false)}} exact to="/raider">Raider Io</NavLink> */}
             </nav>
             <div onClick={() => {setMenu(true)}} className="header_menu_button"><i className="fas fa-bars"></i></div>
           </div>
@@ -130,6 +132,7 @@ function App() {
           </Route>
           <Route exact path="/elvui" component={Elvui}></Route>
           <Route exact path="/icy" component={Icy}></Route>
+          {/* <Route exact path="/raider" component={Raider}></Route> */}
         </main>
       </Router>
     </div>
