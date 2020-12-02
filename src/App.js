@@ -10,6 +10,7 @@ import Icy from './components/Icy';
 import axios from 'axios'
 import { useEffect, useState } from 'react';
 import Raider from './components/Raider';
+import Todoo from './components/Todoo';
 
 function App() {
 
@@ -34,9 +35,9 @@ function App() {
     },
     {
       name: "kiiruä",
-      realm: "conseil-des-ombres",
+      realm: "elune",
       player: "2",
-      link: "https://worldofwarcraft.com/fr-fr/character/eu/conseil-des-ombres/kiiru%C3%A4"
+      link: "https://worldofwarcraft.com/fr-fr/character/eu/elune/kiiru%C3%A4"
     },
     {
       name: "sânka",
@@ -155,6 +156,7 @@ function App() {
               <NavLink onClick={() => { setMenu(false) }} exact to="/elvui">Elvui</NavLink>
               <NavLink onClick={() => { setMenu(false) }} exact to="/icy">Icy Veins</NavLink>
               <NavLink onClick={() => { setMenu(false) }} exact to="/raider">Raider Io</NavLink>
+              <NavLink onClick={() => { setMenu(false) }} exact to="/todoo">Todoo</NavLink>
             </nav>
             <div onClick={() => { setMenu(true) }} className="header_menu_button"><i className="fas fa-bars"></i></div>
           </div>
@@ -166,6 +168,7 @@ function App() {
           <Route exact path="/elvui" component={Elvui}></Route>
           <Route exact path="/icy" component={Icy}></Route>
           <Route exact path="/raider" component={Raider}></Route>
+          <Route exact path="/todoo" component={Todoo}></Route>
         </main>
       </Router>
     </div>

@@ -394,3 +394,99 @@
 }
 
 /*RAIDER*/
+
+
+/*TODOO*/
+
+.todoo_form{
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+}
+
+.todoo_form input{
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  background-color: var(--background-color);
+  box-shadow: 0 0 3px #2C91E1;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 0 10px;
+  color: white;
+  appearance: none;
+}
+
+.todoo_form button{
+  padding: 0 40px;
+  height: 50px;
+  margin-left: 20px;
+  background-color: #2C91E1;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.todoo_form button:hover{
+  background-color: #2373b4;
+}
+
+.todoo_list{
+  margin-top: 20px;
+}
+
+.todoo_list li{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  background-color: rgba(75, 111, 207, 0.473);
+  padding: 10px;
+  margin-bottom: 10px;
+  height: 60px;
+  border-radius: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  transition: 0.2s;
+}
+
+.todoo_list li.active{
+  background-color: rgba(75, 207, 93, 0.473);
+}
+
+.todoo_list li button{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.todoo_list li button:hover{
+  background-color: #1e1b2c79;
+  color: rgb(255, 106, 106);
+}
+
+.todoo_list li button:first-child:hover{
+  color: rgb(59, 230, 59);
+}
+
+.lidiv_button{
+  display: flex;
+  align-items: center;
+}
+
+/*TODOO*/
