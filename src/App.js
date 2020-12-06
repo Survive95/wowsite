@@ -2,7 +2,8 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Route,
-  NavLink
+  NavLink,
+  Link
 } from "react-router-dom";
 import Home from './components/Home';
 import Elvui from './components/Elvui';
@@ -80,6 +81,7 @@ function App() {
   const [datas, setDatas] = useState([])
   const [menu, setMenu] = useState(false)
   const [token, setToken] = useState('')
+  const [header, setHeader] = useState(false)
 
   useEffect(() => {
 
@@ -116,6 +118,7 @@ function App() {
       players.map(item => {
         axios.get(`https://eu.api.blizzard.com/profile/wow/character/${item.realm}/${item.name}?namespace=profile-eu&locale=fr_FR&access_token=${token}`)
           .then(res => {
+            console.log(res);
             axios.get(`https://eu.api.blizzard.com/profile/wow/character/${item.realm}/${item.name}/character-media?namespace=profile-eu&locale=fr_FR&access_token=${token}`)
               .then(media => {
                 setDatas(old => [...old, {
@@ -133,7 +136,8 @@ function App() {
                   main: media.data.assets[2].value,
                   mainr: media.data.assets[3].value,
                   player: item.player,
-                  wowlink: item.link
+                  wowlink: item.link,
+                  ilvl : res.data.equipped_item_level
                 }])
               })
           })
@@ -142,21 +146,32 @@ function App() {
   }
 
 
+  document.addEventListener('scroll', e => {
+    console.log(window.scrollY);
+    if(window.scrollY === 0){
+      setHeader(false)
+    }
+    else{
+      setHeader(true)
+    }
+  })
+
+
   return (
     <div className="App">
       <div className="background_top">
         <div className="background_top-overlay"></div>
       </div>
       <Router>
-        <header className="header_app">
+        <header className={header ? 'header_app active' : 'header_app'}>
           <div className="header_container">
-            <h1 className="header_title">Wow Project</h1>
+            <Link className="header_title_link" to="/"><h1 className="header_title">Wow Project</h1></Link>
             <nav className={menu ? 'header_nav active' : 'header_nav'}>
               <NavLink onClick={() => { setMenu(false) }} exact to="/">Accueil</NavLink>
               <NavLink onClick={() => { setMenu(false) }} exact to="/elvui">Elvui</NavLink>
               <NavLink onClick={() => { setMenu(false) }} exact to="/icy">Icy Veins</NavLink>
-              <NavLink onClick={() => { setMenu(false) }} exact to="/raider">Raider Io</NavLink>
-              <NavLink onClick={() => { setMenu(false) }} exact to="/todoo">Todoo</NavLink>
+              {/* <NavLink onClick={() => { setMenu(false) }} exact to="/raider">Raider Io</NavLink> */}
+              <NavLink onClick={() => { setMenu(false) }} exact to="/todoo">Liens utile</NavLink>
             </nav>
             <div onClick={() => { setMenu(true) }} className="header_menu_button"><i className="fas fa-bars"></i></div>
           </div>
@@ -167,7 +182,7 @@ function App() {
           </Route>
           <Route exact path="/elvui" component={Elvui}></Route>
           <Route exact path="/icy" component={Icy}></Route>
-          <Route exact path="/raider" component={Raider}></Route>
+          {/* <Route exact path="/raider" component={Raider}></Route> */}
           <Route exact path="/todoo" component={Todoo}></Route>
         </main>
       </Router>

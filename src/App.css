@@ -64,6 +64,16 @@
 
 /*HEADER*/
 
+.header_app{
+  position: sticky;
+  top: 0;
+  z-index: 99999;
+}
+
+.header_app.active{
+  background-color: var(--background-color);
+}
+
 .header_container{
   display: flex;
   align-items: center;
@@ -74,9 +84,15 @@
   height: 100px;
 }
 
+.header_title_link{
+  text-decoration: none;
+}
+
 .header_title{
   background: -webkit-linear-gradient(#F9FBF8, #B1DFF9);
+  text-transform: uppercase;
   font-weight: 900;
+  font-size: 20px;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -219,6 +235,12 @@
   color: white;
   font-size: 20px;
   margin-bottom: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 10px;
+}
+
+.player_details.race p{
+  font-size: 18px;
 }
 
 .player_level{
@@ -226,6 +248,19 @@
   font-size: 20px;
   border-radius: 100px;
 }
+
+.player_ilevel{
+  display: flex;
+  align-items: center;
+}
+
+.player_ilevel i{
+  font-size: 16px;
+  margin-right: 10px;
+  margin-bottom: 2px;
+}
+
+
 /*HOME*/
 
 
@@ -401,8 +436,6 @@
 .todoo_form{
   display: flex;
   align-items: center;
-  position: sticky;
-  top: 0px;
 }
 
 .todoo_form input{
@@ -417,12 +450,12 @@
   padding: 0 10px;
   color: white;
   appearance: none;
+  margin-right: 20px;
 }
 
 .todoo_form button{
   padding: 0 40px;
   height: 50px;
-  margin-left: 20px;
   background-color: #2C91E1;
   border: none;
   outline: none;
@@ -448,11 +481,19 @@
   background-color: rgba(75, 111, 207, 0.473);
   padding: 10px;
   margin-bottom: 10px;
-  height: 60px;
   border-radius: 5px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   transition: 0.2s;
+}
+
+.todoo_list li a{
+  color: #58b4ff;
+  text-decoration: none;
+}
+
+.todoo_list li a:hover{
+  text-decoration: underline;
 }
 
 .todoo_list li.active{
@@ -478,10 +519,6 @@
 .todoo_list li button:hover{
   background-color: #1e1b2c79;
   color: rgb(255, 106, 106);
-}
-
-.todoo_list li button:first-child:hover{
-  color: rgb(59, 230, 59);
 }
 
 .lidiv_button{

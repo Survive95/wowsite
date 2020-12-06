@@ -10,11 +10,14 @@ function Character(props) {
                         <p>{props.data.name}</p>
                         <p>{props.data.realm}</p>
                     </div>
-                    <div className="player_details">
+                    <div className="player_details race">
                         <p>{props.data.gender}</p>
                         <p>{props.data.race}</p>
                     </div>
-                    <p className="player_level">{props.data.level}</p>
+                    <div className="player_details">
+                        <p className="player_level">{props.data.level}</p>
+                        <p className="player_ilevel"><i className="fas fa-shield-alt"></i>{props.data.ilvl}</p>
+                    </div>
                 </div>
                 <div className="player_details">
                     <p>{props.data.class}</p>
