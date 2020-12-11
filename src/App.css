@@ -435,7 +435,8 @@
 
 .todoo_form{
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
 .todoo_form input{
@@ -450,7 +451,7 @@
   padding: 0 10px;
   color: white;
   appearance: none;
-  margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .todoo_form button{

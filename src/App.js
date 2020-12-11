@@ -75,7 +75,19 @@ function App() {
       realm: "elune",
       player: "3",
       link: "https://worldofwarcraft.com/fr-fr/character/eu/elune/othior"
-    }
+    },
+    {
+      name: "lognard",
+      realm: "elune",
+      player: "1",
+      link: "https://worldofwarcraft.com/fr-fr/character/eu/elune/lognard"
+    },
+    {
+      name: "sânkas",
+      realm: "elune",
+      player: "2",
+      link: "https://worldofwarcraft.com/fr-fr/character/eu/elune/sânkas"
+    },
   ]
 
   const [datas, setDatas] = useState([])
