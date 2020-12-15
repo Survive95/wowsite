@@ -182,8 +182,9 @@ function App() {
               <NavLink onClick={() => { setMenu(false) }} exact to="/">Accueil</NavLink>
               <NavLink onClick={() => { setMenu(false) }} exact to="/elvui">Elvui</NavLink>
               <NavLink onClick={() => { setMenu(false) }} exact to="/icy">Icy Veins</NavLink>
+              <a className="wow" target="_blank" href="https://eu.battle.net/login/fr/?ref=https://eu.battle.net/oauth/authorize?response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fworldofwarcraft.com%252Fauth%26scope%3Dwow.profile%2520email%2520primary-address%2520private_flags%2520name%2520account.basic%2520account.standard%2520account.standard%253Amodify%2520account.full%2520commerce.profile.basic%2520commerce.entitlements%26state%3DobllxLeu-hyOWxQuhABuzhoaeAtMXL-UBdB8%26client_id%3De674efa0abaa423cb7805d3c41838416&app=oauth">World Of Warcraft</a>
               {/* <NavLink onClick={() => { setMenu(false) }} exact to="/raider">Raider Io</NavLink> */}
-              <NavLink onClick={() => { setMenu(false) }} exact to="/todoo">Liens utile</NavLink>
+              {/* <NavLink onClick={() => { setMenu(false) }} exact to="/todoo">Liens utile</NavLink> */}
             </nav>
             <div onClick={() => { setMenu(true) }} className="header_menu_button"><i className="fas fa-bars"></i></div>
           </div>
@@ -195,7 +196,7 @@ function App() {
           <Route exact path="/elvui" component={Elvui}></Route>
           <Route exact path="/icy" component={Icy}></Route>
           {/* <Route exact path="/raider" component={Raider}></Route> */}
-          <Route exact path="/todoo" component={Todoo}></Route>
+          {/* <Route exact path="/todoo" component={Todoo}></Route> */}
         </main>
       </Router>
     </div>
