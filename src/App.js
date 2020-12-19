@@ -12,6 +12,7 @@ import axios from 'axios'
 import { useEffect, useState } from 'react';
 import Raider from './components/Raider';
 import Todoo from './components/Todoo';
+import logo from './assets/logo.png'
 
 function App() {
 
@@ -158,15 +159,15 @@ function App() {
   }
 
 
-  document.addEventListener('scroll', e => {
-    console.log(window.scrollY);
-    if(window.scrollY === 0){
-      setHeader(false)
-    }
-    else{
-      setHeader(true)
-    }
-  })
+  // document.addEventListener('scroll', e => {
+  //   console.log(window.scrollY);
+  //   if(window.scrollY === 0){
+  //     setHeader(false)
+  //   }
+  //   else{
+  //     setHeader(true)
+  //   }
+  // })
 
 
   return (
@@ -177,7 +178,7 @@ function App() {
       <Router>
         <header className={header ? 'header_app active' : 'header_app'}>
           <div className="header_container">
-            <Link className="header_title_link" to="/"><h1 className="header_title">Wow Project</h1></Link>
+            <Link className="header_title_link" to="/"><h1 className="header_title"><img src={logo}></img>WoW Project</h1></Link>
             <nav className={menu ? 'header_nav active' : 'header_nav'}>
               <NavLink onClick={() => { setMenu(false) }} exact to="/">Accueil</NavLink>
               <NavLink onClick={() => { setMenu(false) }} exact to="/elvui">Elvui</NavLink>

@@ -144,8 +144,8 @@ function Icy() {
                         icons.map(ico => {
                             if (item.name.toLowerCase() === ico.name) {
                                 return (
-                                    <li key={index} style={{ border: `3px solid ${ico.color}`}}>
-                                        <a rel="noreferrer" href={item.link} target="_blank"><span className="icy_icon"><img src={ico.icon}></img></span>{item.link.split('/wow/')[1].split('-').join(' ')}</a>
+                                    <li key={index}>
+                                        <a rel="noreferrer" href={item.link} target="_blank"><span className="icy_icon"><img style={{ border: `2px solid ${ico.color}`}} src={ico.icon}></img></span>{item.link.split('/wow/')[1].split('-').join(' ')}</a>
                                     </li>
                                 )
                             }
